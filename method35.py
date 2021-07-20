@@ -125,7 +125,7 @@ method35_04_acc=[]
 method35_acc=[]  
 
 
-def method35_00(a):
+def train_resnet_ori(a):
     imgs_train, imgs_mask_train, category_train_ohe, mean_train = load_train_data(a)  
     imgs_test, imgs_mask_test, category_test_ohe = load_test_data(a) 
     imgs_test=imgs_test-mean_train
@@ -171,7 +171,7 @@ def method35_00(a):
     method35_00_acc.append(accuracy)
     K.clear_session()
  
-def method35_01(a):
+def train_resnet_sei(a):
     imgs_train, imgs_mask_train, category_train_ohe, mean_train = load_train_data(a)  
     imgs_test, imgs_mask_test, category_test_ohe = load_test_data(a) 
     imgs_test=imgs_test-mean_train
@@ -329,13 +329,13 @@ if __name__ == '__main__':
 
     for a in range(10):
         print('a==', a)
-        method35_00(a)
+        train_resnet_ori(a)
     print('method35_00_acc==',method35_00_acc)
     print('averagenum_method35_00_acc==',averagenum(method35_00_acc))   
 
     for a in range(10):
         print('a==', a)
-        method35_01(a)    
+        train_resnet_sei(a)    
     print('method35_01_acc==',method35_01_acc)
     print('averagenum_method35_01_acc==',averagenum(method35_01_acc)) 
 
