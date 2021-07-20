@@ -130,7 +130,7 @@ method35_softmax_semodule_roc_auc=[]
 def slice(x,index):         
     return x[:,:,:,index]     
     
-def softmax_semodule_method(a):
+def train_attention_aggregation(a):
     model00='./model35/method35_00'+str(a)+'.hdf5'
     model01='./model35/method35_01'+str(a)+'.hdf5'
     imgs_train, imgs_mask_train, category_train_ohe, mean_train = load_train_data(a)  
@@ -227,7 +227,7 @@ if __name__ == '__main__':
     for a in range(10):
 #    a=8
         print('a==', a)
-        softmax_semodule_method(a)    
+        train_attention_aggregation(a)    
     print('method35_softmax_semodule_acc==',method35_softmax_semodule_acc)
     print('averagenum_method35_softmax_semodule_acc==',averagenum(method35_softmax_semodule_acc))  
 
