@@ -131,62 +131,6 @@ method_roc_auc=[]
 tprs=[]
 aucs=[]
 mean_fpr=np.linspace(0,1,100)
-
-def calculate_metric01(model,imgs_test,category_test,category_test_ohe, p_ts=0.5):
-    load_model01 = load_model(model)
-#    imgs_test= np.concatenate((imgs_test,imgs_test,imgs_test), axis = 3)
-    predicted = load_model01.predict(imgs_test)
-    predicted01= predicted[:,1]
-
-    
-    predicted_1d = np.argmax(predicted, axis=1)
-    loss,accuracy = load_model01.evaluate(imgs_test, category_test_ohe)
-
-    print("\nPredicted01d softmax vector is: ")
-    print(predicted_1d)
-
-    
-    print("\nclassification_report is: ")
-    print(classification_report(category_test, predicted_1d))   
-        
-    false_positive_rate, true_positive_rate, thresholds = roc_curve(category_test, predicted01)
-    roc_auc = auc(false_positive_rate, true_positive_rate)
-    tprs.append(interp(mean_fpr,false_positive_rate,true_positive_rate))
-    tprs[-1][0]=0.0
-    aucs.append(roc_auc)
-
-    print(loss,accuracy)
-    TP=0
-    FP=0
-    TN=0
-    FN=0
-    for m in range(len(category_test)):
-        if category_test[m]==1:
-            if predicted_1d[m]==1:
-                TP+=1
-        if category_test[m]==1:
-            if predicted_1d[m]==0:
-                FP+=1    
-        if category_test[m]==0:
-            if predicted_1d[m]==0:
-                TN+=1
-        if category_test[m]==0:
-            if predicted_1d[m]==1:
-                FN+=1       
-    print(TP,FP,TN,FN)    
-        
-      
-    specificity=TN/(TN+FP)
-    sensitivity=TP/(TP+FN)  
-    accuracy=(TP+TN)/(TP+TN+FN+FP)    
-    F1=(TP+TP)/(TP+TP+FN+FP)   
-    print(specificity,sensitivity,accuracy,F1)
-    method_acc.append(accuracy)  
-    method_specificity.append(specificity)
-    method_sensitivity.append(sensitivity)
-    method_F1.append(F1)
-    method_roc_auc.append(roc_auc)
-    K.clear_session() 
     
 def calculate_metric02(model,imgs_test,category_test,category_test_ohe, p_ts=0.5):
     imgs_train_2= np.concatenate((imgs_train,imgs_mask_train), axis = 3)
