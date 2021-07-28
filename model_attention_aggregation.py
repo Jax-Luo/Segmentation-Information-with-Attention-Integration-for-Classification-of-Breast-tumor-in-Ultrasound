@@ -193,7 +193,7 @@ def train_attention_aggregation(a):
                              horizontal_flip=True, fill_mode='nearest')
     model_checkpoint = ModelCheckpoint('./model35_7x7/softmax_semodule_method'+str(a)+'.hdf5', monitor='loss',verbose=2, save_best_only=True, mode='min')
     model.compile(optimizer = Adam(lr = 1e-4), loss = 'binary_crossentropy', metrics = ['accuracy'])
-    model.fit_generator(aug.flow(imgs_train_2, category_train_ohe, batch_size=30), validation_data=(img_test_2, category_test_ohe), steps_per_epoch=60, epochs=40, verbose=2, shuffle=True, callbacks=[model_checkpoint])
+    model.fit_generator(aug.flow(imgs_train_2, category_train_ohe, batch_size=30), validation_data=(imgs_train_2, category_train_ohe), steps_per_epoch=60, epochs=40, verbose=2, shuffle=True, callbacks=[model_checkpoint])
     
     loss,accuracy = model.evaluate(img_test_2, category_test_ohe)
     
