@@ -44,6 +44,9 @@ python attention_aggregation.py
 ## For testing
 
 A TCI image is used as input of the model to predict the benign and malignant tumors.
+```
+python test_model.py
+```
 
 
 ## Result
