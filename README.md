@@ -6,7 +6,7 @@ This work is being submitted to the journal **pattern recognition** which is a v
 
 
 ## Dataset
-The ultrasound data set can be obtained at the link 'http://wisemed.cn/index.php/index/doctor.html'. 
+TCIs are resized into a unified 224 × 224 and are one-channel gray images, and the format is JPG. The ultrasound data set can be obtained at the link 'http://wisemed.cn/index.php/index/doctor.html'. 
 
 
 ## Requirements
