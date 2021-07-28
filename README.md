@@ -5,16 +5,16 @@ This work is being submitted to the journal **pattern recognition** which is a v
 > this is a very userful implementation of breast tumors classification based on tensorflow and keras, the model is very clear.
 
 
-## Dataset
-TCIs are resized into a unified 224 × 224 and are one-channel gray images, and the format is JPG. The ultrasound data set can be obtained at the link 'http://wisemed.cn/index.php/index/doctor.html'. 
-
-
 ## Requirements
 Basically, this code supports and python3.6.4, the following package should installed:
 * tensorflow 1.9.0 
 * keras 2.1.4
 * scipy
 * cv2
+
+
+## Dataset
+TCIs are resized into a unified 224 × 224 and are one-channel gray images, and the format is JPG. The ultrasound data set can be obtained at the link 'http://wisemed.cn/index.php/index/doctor.html'. 
 
 
 ## Usage
