@@ -106,7 +106,7 @@ class myUnet(object):
 
 		up6 = Conv2D(512, 2, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(UpSampling2D(size = (2,2))(drop5))
 		print("up6 shape: ",up6.shape)
-		merge6 = concatenate([drop4,up6], axis = 3)  # 合并输出
+		merge6 = concatenate([drop4,up6], axis = 3)  
 		conv6 = Conv2D(512, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(merge6)
 		print('conv6 shape: ', conv6.shape)
 		conv6 = Conv2D(512, 3, activation = 'relu', padding = 'same', kernel_initializer = 'he_normal')(conv6)
@@ -163,11 +163,11 @@ class myUnet(object):
 		model.fit(imgs_train, imgs_mask_train, batch_size=2, epochs=20, verbose=2,validation_split=0.2,
 				  shuffle=True, callbacks=[model_checkpoint])
      
-# 对一张图片的语义分割
+
 def predict_img(model, img_path="./data/test/38.bmp", save_path="./results/38.bmp"):
     """
-    :param img_path: 需要进行分割的图片
-    :param save_path: 保存的地址和名
+    :param img_path: 
+    :param save_path: 
     """
     img = load_img(img_path, grayscale=True)  # 读入图片，并把它转换为灰度图
     imgdata = img_to_array(img)  # 将图片转换成数组
@@ -239,8 +239,8 @@ if __name__ == '__main__':
 		os.mkdir(savePath)
 	allpaths = os.listdir(testPath)
 	myunet = myUnet()
-	model = myunet.get_unet()  # 构造原有的网络
-	model.load_weights('unet.hdf5')  # 输入训练好的权重
+	model = myunet.get_unet()  
+	model.load_weights('unet.hdf5')  
 	for i in range(len(allpaths)):
 		predict_img(model, testPath+allpaths[i], savePath+allpaths[i])
 #loss,accuracy = model.evaluate(imgs_train, imgs_mask_train)
