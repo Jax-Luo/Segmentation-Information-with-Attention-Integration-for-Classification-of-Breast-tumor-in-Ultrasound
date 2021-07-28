@@ -229,8 +229,8 @@ def load_train_data():
     
 
 if __name__ == '__main__':
-#	myunet = myUnet()
-#	myunet.train()
+	myunet = myUnet()
+	myunet.train()
 #	imgs_train,imgs_mask_train,category_train_ohe,imgs_test,imgs_mask_test,category_test_ohe=load_train_data()
 #	testPath = "./1_0_1200_roi_resize_20190912/1_0_1200_roi_resize/"
 	testPath = "./-1_0_1200_roi_resize_20190912/-1_0_1200_roi_resize/"
