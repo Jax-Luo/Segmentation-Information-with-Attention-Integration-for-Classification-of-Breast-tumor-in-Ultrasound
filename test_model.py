@@ -253,22 +253,3 @@ if __name__ == '__main__':
 
     print('method_roc_auc==',method_roc_auc)
     print('averagenum_method_roc_auc==',averagenum(method_roc_auc))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
