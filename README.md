@@ -27,6 +27,7 @@ python postprocess.py
 
 Secondly generate 'npy' data file.
 ```
+python data_cv.py
 python data_cv_03.py
 ```
 
