@@ -18,12 +18,12 @@ def countfile(fileDir):
 def count_picknumber(imgDir):
     pathDir02=os.listdir(imgDir)
     filenumber=len(pathDir02)
-    rate=0.1    #自定义抽取图片的比例，比方说100张抽10张，那就是0.1
-    picknumber=int(filenumber*rate) #按照rate比例从文件夹中取一定数量图片
+    rate=0.1    
+    picknumber=int(filenumber*rate) 
     return picknumber
     
 def generate_backups(imgDir,labelDir,sec_imgDir_0,sec_labelDir_0):
-    pathDir = os.listdir(imgDir)    #取图片的原始路径
+    pathDir = os.listdir(imgDir)    
 
     if not os.path.lexists(sec_imgDir_0):
         os.mkdir(sec_imgDir_0)
@@ -48,10 +48,10 @@ def moveFile(sec_imgDir_0,sec_labelDir_0,sec_imgDir_n,sec_labelDir_n, picknumber
 
     pathDir02=os.listdir(sec_imgDir_0)
 #    filenumber=len(pathDir02)
-#    rate=0.1    #自定义抽取图片的比例，比方说100张抽10张，那就是0.1
-#    picknumber=int(filenumber*rate) #按照rate比例从文件夹中取一定数量图片
+#    rate=0.1    
+#    picknumber=int(filenumber*rate) 
     print('picknumber=',picknumber)
-    sample = random.sample(pathDir02, picknumber)  #随机选取picknumber数量的样本图片
+    sample = random.sample(pathDir02, picknumber)  
     print (sample)
 
     for name in sample:
