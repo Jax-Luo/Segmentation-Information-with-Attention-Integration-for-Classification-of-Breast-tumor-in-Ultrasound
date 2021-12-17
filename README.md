@@ -14,7 +14,7 @@ Basically, this code supports and python3.6.4, the following package should inst
 
 
 ## Dataset
-TCIs are resized into a unified 224 × 224 and are one-channel gray images, and the format is JPG. Breast tumor ultrasound classification data have 1702 images. We provide sample images and can download on here:https://pan.baidu.com/s/1g_sst_VyCrRkmx-KHz94UQ password：c096. 
+TCIs are resized into a unified 224 × 224 and are one-channel gray images, and the format is JPG. Breast tumor ultrasound classification data have 1702 images. We provide sample images and can download on here:https://pan.baidu.com/s/1y0CPkTqD2wXxOrDEDzFAcw password：wf7f. 
 
 
 ## Usage
