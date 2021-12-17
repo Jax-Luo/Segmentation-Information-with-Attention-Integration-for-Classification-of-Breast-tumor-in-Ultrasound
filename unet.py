@@ -29,7 +29,7 @@ class myUnet(object):
 #		imgs_train, imgs_mask_train = mydata.load_train_data()
 #		imgs_test = mydata.load_test_data()
 #		return imgs_train, imgs_mask_train, imgs_test
-		npy_path='./npydata'
+		npy_path='./npydata_seg'
 		imgs_train = np.load(npy_path + '/augimgs_train.npy')
 		imgs_mask_train = np.load(npy_path + '/augimgs_mask_train.npy')
 		imgs_test = np.load(npy_path + '/imgs_test.npy')
