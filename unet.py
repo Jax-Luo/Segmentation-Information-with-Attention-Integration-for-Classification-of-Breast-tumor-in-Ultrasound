@@ -233,7 +233,7 @@ if __name__ == '__main__':
 	myunet.train()
 #	imgs_train,imgs_mask_train,category_train_ohe,imgs_test,imgs_mask_test,category_test_ohe=load_train_data()
 #	testPath = "./1_0_1200_roi_resize_20190912/1_0_1200_roi_resize/"
-	testPath = "./-1_0_1200_roi_resize_20190912/-1_0_1200_roi_resize/"
+	testPath = "./-1_0_1200/-1_0_1200_roi_224/"
 	savePath = testPath[:-1]+'_results/'
 	if not os.path.lexists(savePath):
 		os.mkdir(savePath)
